@@ -102,7 +102,7 @@ const Contact = () => {
                   <div>
                     <div className="font-semibold">GitHub</div>
                     <a
-                      href="https://github.com/"
+                      href="https://github.com/ShivaEnduri"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-cyan-100 hover:text-white transition-colors"

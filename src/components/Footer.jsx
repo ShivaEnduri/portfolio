@@ -36,7 +36,7 @@ const Footer = () => {
 
               {/* GITHUB */}
               <a
-                href="https://github.com/"
+                href="https://github.com/ShivaEnduri"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-11 h-11 border-2 border-gray-600 rounded-xl flex items-center justify-center hover:border-cyan-400 hover:bg-cyan-400 transition-all duration-300"
