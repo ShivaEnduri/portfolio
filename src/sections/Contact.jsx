@@ -51,7 +51,7 @@ const Contact = () => {
                 Ready to collaborate?
               </h3>
               <p className="text-base sm:text-lg lg:text-xl text-cyan-100 mb-8 sm:mb-12 leading-relaxed">
-                I'm open to full-time opportunities and freelance projects. Feel free to reach out —
+                I'm open to full-time opportunities and freelance projects. Feel free to reach out.
                 I’d love to discuss how we can work together.
               </p>
 
@@ -84,7 +84,7 @@ const Contact = () => {
                   <div>
                     <div className="font-semibold">LinkedIn</div>
                     <a
-                      href="https://www.linkedin.com/in/your-linkedin"
+                      href="https://www.linkedin.com/in/shiva-kumar-enduri-450769229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-cyan-100 hover:text-white transition-colors"
@@ -102,12 +102,12 @@ const Contact = () => {
                   <div>
                     <div className="font-semibold">GitHub</div>
                     <a
-                      href="https://github.com/your-github"
+                      href="https://github.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-cyan-100 hover:text-white transition-colors"
                     >
-                      /shivakumar-enduri
+                      /shivaenduri
                     </a>
                   </div>
                 </div>

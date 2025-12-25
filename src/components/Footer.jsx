@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               {/* LINKEDIN */}
               <a
-                href="https://www.linkedin.com/in/your-linkedin"
+                href="https://www.linkedin.com/in/shiva-kumar-enduri-450769229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-11 h-11 border-2 border-gray-600 rounded-xl flex items-center justify-center hover:border-cyan-400 hover:bg-cyan-400 transition-all duration-300"
@@ -36,7 +36,7 @@ const Footer = () => {
 
               {/* GITHUB */}
               <a
-                href="https://github.com/your-github"
+                href="https://github.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-11 h-11 border-2 border-gray-600 rounded-xl flex items-center justify-center hover:border-cyan-400 hover:bg-cyan-400 transition-all duration-300"
