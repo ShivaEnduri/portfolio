@@ -1,5 +1,6 @@
 import React from 'react';
 import myImage from '../assets/myPicture.png'
+import { FaNodeJs } from "react-icons/fa";
 const About = () => {
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 relative z-10">
@@ -28,7 +29,7 @@ const About = () => {
               </div>
               <div className="group">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                  <i className="ri-nodejs-line text-lg sm:text-2xl text-white"></i>
+                 <FaNodeJs className="text-lg sm:text-2xl text-white" />
                 </div>
               </div>
               <div className="group">

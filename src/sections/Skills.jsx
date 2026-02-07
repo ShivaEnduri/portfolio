@@ -1,20 +1,22 @@
 
 import React from "react";
+import { FaNodeJs } from "react-icons/fa";
 
 
 const skills = [
-  { name: 'React.js', icon: 'ri-reactjs-line', percent: 90, gradient: 'from-cyan-400 to-blue-500' },
-  { name: 'Node.js', icon: 'ri-nodejs-line', percent: 85, gradient: 'from-green-400 to-emerald-500' },
-  { name: 'Express.js', icon: 'ri-server-line', percent: 85, gradient: 'from-gray-400 to-gray-600' },
-  { name: 'MySQL', icon: 'ri-database-2-line', percent: 90, gradient: 'from-orange-400 to-red-500' },
-  { name: 'JavaScript', icon: 'ri-javascript-line', percent: 90, gradient: 'from-yellow-400 to-orange-500' },
-  { name: 'HTML5', icon: 'ri-html5-line', percent: 95, gradient: 'from-red-400 to-pink-500' },
-  { name: 'CSS3', icon: 'ri-css3-line', percent: 90, gradient: 'from-blue-400 to-indigo-500' },
-  { name: 'Git', icon: 'ri-git-branch-line', percent: 85, gradient: 'from-purple-400 to-pink-500' },
-  { name: 'REST APIs', icon: 'ri-links-line', percent: 85, gradient: 'from-teal-400 to-cyan-500' },
-  { name: 'Tailwind CSS', icon: 'ri-palette-line', percent: 90, gradient: 'from-sky-400 to-blue-500' },
-  { name: 'Zustand', icon: 'ri-refresh-line', percent: 85, gradient: 'from-violet-400 to-purple-500' },
+  { name: "React.js", iconType: "remix", icon: "ri-reactjs-line", percent: 90, gradient: "from-cyan-400 to-blue-500" },
+  { name: "Node.js", iconType: "react", icon: "node", percent: 85, gradient: "from-green-400 to-emerald-500" },
+  { name: "Express.js", iconType: "remix", icon: "ri-server-line", percent: 85, gradient: "from-gray-400 to-gray-600" },
+  { name: "MySQL", iconType: "remix", icon: "ri-database-2-line", percent: 90, gradient: "from-orange-400 to-red-500" },
+  { name: "JavaScript", iconType: "remix", icon: "ri-javascript-line", percent: 90, gradient: "from-yellow-400 to-orange-500" },
+  { name: "HTML5", iconType: "remix", icon: "ri-html5-line", percent: 95, gradient: "from-red-400 to-pink-500" },
+  { name: "CSS3", iconType: "remix", icon: "ri-css3-line", percent: 90, gradient: "from-blue-400 to-indigo-500" },
+  { name: "Git", iconType: "remix", icon: "ri-git-branch-line", percent: 85, gradient: "from-purple-400 to-pink-500" },
+  { name: "REST APIs", iconType: "remix", icon: "ri-links-line", percent: 85, gradient: "from-teal-400 to-cyan-500" },
+  { name: "Tailwind CSS", iconType: "remix", icon: "ri-palette-line", percent: 90, gradient: "from-sky-400 to-blue-500" },
+  { name: "Zustand", iconType: "remix", icon: "ri-refresh-line", percent: 85, gradient: "from-violet-400 to-purple-500" },
 ];
+
 
 const Skills = () => {
   return (
@@ -43,7 +45,16 @@ const Skills = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} rounded-2xl sm:rounded-3xl rotate-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110`}></div>
                 <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 text-center shadow-lg border border-gray-100 transform group-hover:scale-105 transition-all duration-300">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <i className={`${skill.icon} text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-br ${skill.gradient} bg-clip-text text-transparent`}></i>
+                   <div className="text-2xl sm:text-3xl lg:text-4xl">
+  {skill.iconType === "react" ? (
+    <FaNodeJs className="text-green-500" />
+  ) : (
+    <i
+      className={`${skill.icon} bg-gradient-to-br ${skill.gradient} bg-clip-text text-transparent`}
+    ></i>
+  )}
+</div>
+
                   </div>
                   <h3 className="text-gray-900 font-bold text-sm sm:text-base lg:text-lg mb-3 sm:mb-4">{skill.name}</h3>
                   <div className="relative w-16 h-16 sm:w-20 sm:h-20 mx-auto">
