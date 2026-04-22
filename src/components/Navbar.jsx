@@ -51,55 +51,60 @@ const Navbar = () => {
         </div>
 
         
-        {/* Mobile Menu */}
-<div
-  className={`md:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
-    isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-  }`}
-  onClick={() => setIsOpen(false)} // close on anywhere click
->
-  {/* Slide-out panel */}
-  <div
-    className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-500 ease-out ${
-      isOpen ? 'translate-x-0' : 'translate-x-full'
-    }`}
-    onClick={(e) => e.stopPropagation()} 
-  >
-    <div className="p-6 pt-20 h-full flex flex-col justify-between">
-      {/* Menu Header */}
-      <div>
-        <div className="flex items-center space-x-2 mb-4 pb-2 border-b border-gray-200">
-          <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-xl rotate-45 flex items-center justify-center">
-            <span className="text-white font-bold text-sm -rotate-45">SK</span>
+  {/* Mobile Menu */}
+{isOpen && (
+  <div className="md:hidden fixed inset-0 z-50">
+
+    {/* 🔥 BACKDROP (click anywhere closes) */}
+    <div
+      className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+      onClick={() => setIsOpen(false)}
+    />
+
+    {/* 🚀 SIDEBAR PANEL */}
+    <div
+      className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-500 ease-out ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      }`}
+      onClick={(e) => e.stopPropagation()} // ❗ prevents closing when clicking inside
+    >
+      <div className="p-6 pt-20 h-full flex flex-col justify-between">
+
+        {/* Header */}
+        <div>
+          <div className="flex items-center space-x-2 mb-4 pb-2 border-b border-gray-200">
+            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-xl rotate-45 flex items-center justify-center">
+              <span className="text-white font-bold text-sm -rotate-45">SK</span>
+            </div>
+            <span className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+              Menu
+            </span>
           </div>
-          <span className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-            Menu
-          </span>
+
+          {/* Links */}
+          <div className="space-y-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="group block w-full p-2 rounded-2xl hover:bg-gradient-to-r hover:from-cyan-50 hover:to-teal-50 transition"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-800 group-hover:text-cyan-700 font-medium text-lg">
+                    {link.name}
+                  </span>
+                  <i className="ri-arrow-right-line text-gray-500 group-hover:text-cyan-500 group-hover:translate-x-1 transition"></i>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* Nav Links */}
-        <div className="space-y-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)} // close on link click
-              className="group block w-full text-left p-1 rounded-2xl hover:bg-gradient-to-r hover:from-cyan-50 hover:to-teal-50 transition-all duration-300"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-gray-800 group-hover:text-cyan-800 font-medium text-lg truncate">
-                  {link.name}
-                </span>
-                <i className="ri-arrow-right-line text-gray-800 group-hover:text-cyan-500 transition-transform duration-300 group-hover:translate-x-1"></i>
-              </div>
-            </a>
-          ))}
-        </div>
       </div>
-
     </div>
   </div>
-</div>
+)}
 
       </nav>
     </>

@@ -8,6 +8,7 @@ import Projects from './sections/Projects.jsx';
 import CaseStudies from './sections/CaseStudies.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <CaseStudies />
       <Contact />
       <Footer />
+       <Chatbot />
     </div>
   );
 }
