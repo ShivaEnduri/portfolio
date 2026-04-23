@@ -92,17 +92,22 @@ export default function Chatbot() {
   const getBotReply = (msg) => {
     const text = msg.toLowerCase();
 
-    if (/price|cost|how much|charge/.test(text)) {
-      return "Pricing:\n• Basic: ₹5k–₹10k\n• Business: ₹10k–₹25k\n• Full-stack: ₹25k+ 💰";
-    }
+     if (/freelance|hire|work|available|service|build|developer|website/.test(text)) {
+    handleFreelanceFlow();
+    return null;
+  }
 
-    if (/about|who/.test(text)) {
-      return "I'm Shiva, a Full Stack Developer working with React, Node.js & scalable apps 🚀";
-    }
+   if (/price|pricing|cost|charge|budget/.test(text)) {
+  return "Shiva’s pricing depends on requirements:\n• Basic: ₹5k–₹10k\n• Business: ₹10k–₹25k\n• Full-stack: ₹25k+ 💰";
+}
 
-    if (/contact|phone|call/.test(text)) {
-      return { type: "whatsapp" };
-    }
+ 
+
+    if (/contact|phone|call|reach/.test(text)) {
+  return {
+    type: "contact"
+  };
+}
 
     if (/project/.test(text)) {
       scrollToSection("projects");
@@ -113,12 +118,11 @@ export default function Chatbot() {
       return "React, Node.js, Express, MySQL, Tailwind ⚡";
     }
 
-    if (/freelance|hire/.test(text)) {
-      handleFreelanceFlow();
-      return null;
-    }
-
-    return "I can help with projects, pricing, hiring, or skills 😊";
+  
+    if (/about|who is|tell me about/.test(text)) {
+  return "Shiva is a Full Stack Developer skilled in React, Node.js, and building scalable web applications 🚀";
+}
+    return "You can ask about Shiva’s projects, pricing, skills, or hiring. I’ll guide you 😊";
   };
 
   // 📤 Send message
@@ -154,9 +158,9 @@ export default function Chatbot() {
     const reply = getBotReply(input);
 
     if (reply) {
-      if (typeof reply === "object") {
-        addBotMessage(`https://wa.me/${phoneNumber}`, "whatsapp");
-      } else {
+     if (typeof reply === "object") {
+  addBotMessage("", reply.type);
+} else {
         addBotMessage(reply);
       }
     }
@@ -202,7 +206,7 @@ export default function Chatbot() {
                   <Bot size={16} className="text-indigo-600" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">Shiva Assistant</p>
+                <p className="text-sm font-semibold">Shiva’s Assistant</p>
                   <p className="text-[10px] text-green-500">Online</p>
                 </div>
               </div>
@@ -227,18 +231,30 @@ export default function Chatbot() {
                         : "bg-indigo-500 text-white"
                     }`}
                   >
-                    {msg.type === "whatsapp" ? (
-                      <a
-                        href={msg.text}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-green-600 underline"
-                      >
-                        💬 Chat on WhatsApp (Instant Reply)
-                      </a>
-                    ) : (
-                      msg.text
-                    )}
+                   {msg.type === "whatsapp" ? (
+  <a
+    href={msg.text}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-green-600 underline"
+  >
+    💬 Chat on WhatsApp (Instant Reply)
+  </a>
+) : msg.type === "contact" ? (
+  <div className="space-y-1">
+    <p>📞 Call: +91 9912251451</p>
+    <a
+      href={`https://wa.me/${phoneNumber}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-green-600 underline"
+    >
+      💬 Chat on WhatsApp (Instant Reply)
+    </a>
+  </div>
+) : (
+  msg.text
+)}
                   </div>
 
                   <span className="text-[10px] text-gray-400 mt-1">
@@ -298,4 +314,5 @@ export default function Chatbot() {
       </AnimatePresence>
     </div>
   );
-}
+  }
+  
